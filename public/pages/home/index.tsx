@@ -7,7 +7,7 @@ export default function Home() {
       <main>
         <Section>
           <p>
-            I'm a front-end developer. This is my personal website. It isn't
+            I'm a front-end developer. This is my personal website. It isn't{' '}
             much yet, but I'll build it out as I go.
           </p>
         </Section>
