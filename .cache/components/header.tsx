@@ -1,21 +1,19 @@
 import { createHotContext as $w_h$ } from '/_wmr.js';const $IMPORT_META_HOT$ = $w_h$(import.meta.url);import { html as $$html } from '/@npm/htm/preact';
 import { styled } from '/@npm/goober';
-
-const El = styled('header')`
-  padding: 2vmax;
-`;
+import { Section } from './section.tsx';
 
 const H1Link = styled('a')`
   text-decoration-thickness: 0.25rem;
 `;
 
 const H1 = styled('h1')`
+  display: inline-block;
   margin: 0;
 `;
 
 export default function Header() {
   return (
-    $$html`<${El}>
+    $$html`<${Section} as="header">
       <${H1Link} href="/">
         <${H1}>Nick Rutten<//>
       <//>

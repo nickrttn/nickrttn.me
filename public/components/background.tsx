@@ -12,6 +12,7 @@ const Fixed = styled('div')`
   svg {
     width: 100%;
     height: 100%;
+    background-blend-mode: screen;
   }
 `;
 
@@ -59,7 +60,7 @@ export default function Background() {
             x={(el.col - 1) * size}
             y={(el.row - 1) * size}
             fill={el.color}
-            fill-opacity={0.05}
+            fill-opacity={0.25}
             width={size}
             height={size}
             shapeRendering="crispEdges"
