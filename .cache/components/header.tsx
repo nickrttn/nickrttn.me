@@ -1,18 +1,25 @@
 import { createHotContext as $w_h$ } from '/_wmr.js';const $IMPORT_META_HOT$ = $w_h$(import.meta.url);import { html as $$html } from '/@npm/htm/preact';
-import LinkTree from '../../components/linktree.tsx';
-import { Section } from '../../components/section.tsx';
+import { styled } from '/@npm/goober';
 
-export default function Home() {
+const El = styled('header')`
+  padding: 2vmax;
+`;
+
+const H1Link = styled('a')`
+  text-decoration-thickness: 0.25rem;
+`;
+
+const H1 = styled('h1')`
+  margin: 0;
+`;
+
+export default function Header() {
   return (
-    $$html`
-      <main>
-        <${Section}>
-          <p>I'm a front-end developer. This is my personal website.</p>
-        <//>
-      </main>
-
-      <${LinkTree} />
-    `
+    $$html`<${El}>
+      <${H1Link} href="/">
+        <${H1}>Nick Rutten<//>
+      <//>
+    <//>`
   );
 }
 

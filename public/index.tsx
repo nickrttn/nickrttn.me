@@ -1,32 +1,41 @@
-import hydrate from 'preact-iso/hydrate';
-import { LocationProvider, Router } from 'preact-iso/router';
-import lazy, { ErrorBoundary } from 'preact-iso/lazy';
-import Home from './pages/home/index';
+import Header from './components/header';
+import Home from './pages/home';
 import NotFound from './pages/_404';
-import Header from './header';
+import hydrate from 'preact-iso/hydrate';
+import { ErrorBoundary } from 'preact-iso/lazy';
+import { LocationProvider, Router } from 'preact-iso/router';
+import { setup } from 'goober';
+import { prefix } from 'goober/prefixer';
+import { h } from 'preact';
+import GlobalStyles from './style';
+import Background from './components/background';
 
-const About = lazy(() => import('./pages/about/index'));
+// init goober
+setup(h, prefix);
 
 export function App() {
-	return (
-		<LocationProvider>
-			<div class="app">
-				<Header />
-				<ErrorBoundary>
-					<Router>
-						<Home path="/" />
-						{/* <About path="/about" /> */}
-						<NotFound default />
-					</Router>
-				</ErrorBoundary>
-			</div>
-		</LocationProvider>
-	);
+  return (
+    <>
+      <GlobalStyles />
+      <LocationProvider>
+        <div class="app">
+          <ErrorBoundary>
+            <Header />
+            <Router>
+              <Home path="/" />
+              <NotFound default />
+            </Router>
+            <Background />
+          </ErrorBoundary>
+        </div>
+      </LocationProvider>
+    </>
+  );
 }
 
 hydrate(<App />);
 
-export async function prerender(data) {
-	const { default: prerender } = await import('preact-iso/prerender');
-	return await prerender(<App {...data} />);
+export async function prerender(data: Record<string, unknown>) {
+  const { default: prerender } = await import('preact-iso/prerender');
+  return await prerender(<App {...data} />);
 }

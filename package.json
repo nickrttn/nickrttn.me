@@ -2,7 +2,8 @@
 	"scripts": {
 		"start": "wmr",
 		"build": "wmr build --prerender",
-		"serve": "wmr serve"
+		"serve": "wmr serve",
+		"lint": "eslint \"public/**/*.{js,ts,tsx}\""
 	},
 	"eslintConfig": {
 		"extends": "preact"
@@ -13,11 +14,18 @@
 	},
 	"dependencies": {
 		"@octokit/graphql": "^4.6.1",
+		"goober": "^2.0.33",
 		"preact": "^10.5.12",
 		"preact-iso": "^1.0.0",
 		"preact-render-to-string": "^5.1.16"
 	},
 	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^4.17.0",
+		"@typescript-eslint/parser": "^4.17.0",
+		"eslint": "^7.22.0",
+		"eslint-config-prettier": "^8.1.0",
+		"eslint-plugin-preact": "^0.1.0",
+		"typescript": "^4.2.3",
 		"wmr": "^1.2.0"
 	}
 }

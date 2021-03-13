@@ -1,36 +1,44 @@
 import { createHotContext as $w_h$ } from '/_wmr.js';const $IMPORT_META_HOT$ = $w_h$(import.meta.url);import { html as $$html } from '/@npm/htm/preact';
-import hydrate from '/@npm/preact-iso/hydrate';
-import { LocationProvider, Router } from '/@npm/preact-iso/router';
-import lazy, { ErrorBoundary } from '/@npm/preact-iso/lazy';
+import Header from './components/header.tsx';
 import Home from './pages/home/index.tsx';
 import NotFound from './pages/_404.tsx';
-import Header from './header.tsx';
+import hydrate from '/@npm/preact-iso/hydrate';
+import { ErrorBoundary } from '/@npm/preact-iso/lazy';
+import { LocationProvider, Router } from '/@npm/preact-iso/router';
+import { setup } from '/@npm/goober';
+import { prefix } from '/@npm/goober/prefixer';
+import { h } from '/@npm/preact';
+import GlobalStyles from './style.ts';
+import Background from './components/background.tsx';
 
-const About = lazy(() => import('./pages/about/index.tsx'));
+// init goober
+setup(h, prefix);
 
 export function App() {
-	return (
-		$$html`<${LocationProvider}>
-			<div class="app">
-				<${Header} />
-				<${ErrorBoundary}>
-					<${Router}>
-						<${Home} path="/" />
-						
-						<${NotFound} default />
-					<//>
-				<//>
-			</div>
-		<//>`
-	);
+  return (
+    $$html`
+      <${GlobalStyles} />
+      <${LocationProvider}>
+        <div class="app">
+          <${ErrorBoundary}>
+            <${Header} />
+            <${Router}>
+              <${Home} path="/" />
+              <${NotFound} default />
+            <//>
+            <${Background} />
+          <//>
+        </div>
+      <//>
+    `
+  );
 }
 
 hydrate($$html`<${App} />`);
 
 export async function prerender(data) {
-	console.log("PRERENDERING")
-	const { default: prerender } = await import('/@npm/preact-iso/prerender');
-	return await prerender($$html`<${App} ...${data} />`);
+  const { default: prerender } = await import('/@npm/preact-iso/prerender');
+  return await prerender($$html`<${App} ...${data} />`);
 }
 
 

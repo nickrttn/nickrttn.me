@@ -1,24 +1,16 @@
-import styles from './style.module.css';
-import { useState } from 'preact/hooks';
+import LinkTree from '../../components/linktree';
+import { Section } from '../../components/section';
 
 export default function Home() {
-	const [count, setCount] = useState(0);
+  return (
+    <>
+      <main>
+        <Section>
+          <p>I'm a front-end developer. This is my personal website.</p>
+        </Section>
+      </main>
 
-	return (
-		<>
-			<section class={styles.home}>
-				<h1>Home</h1>
-				<p>This is the home page.</p>
-				<>
-					<button style={{ width: 30 }} onClick={() => setCount(count - 1)}>
-						-
-					</button>
-					<output style={{ padding: 10 }}>Count: {count}</output>
-					<button style={{ width: 30 }} onClick={() => setCount(count + 1)}>
-						+
-					</button>
-				</>
-			</section>
-		</>
-	);
+      <LinkTree />
+    </>
+  );
 }
