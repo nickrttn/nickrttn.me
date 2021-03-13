@@ -1,5 +1,10 @@
 import { createHotContext as $w_h$ } from '/_wmr.js';const $IMPORT_META_HOT$ = $w_h$(import.meta.url);import { html as $$html } from '/@npm/htm/preact';
+import { styled } from '/@npm/goober';
 import { Section } from './section.tsx';
+
+const Li = styled('li')`
+  margin-bottom: 0.5rem;
+`;
 
 export default function LinkTree() {
   return (
@@ -7,7 +12,7 @@ export default function LinkTree() {
       <h2>Links</h2>
       <p>A collection of links to my profiles on other websites.</p>
       <ul>
-        <li>
+        <${Li}>
           <a
             href="https://github.com/nickrttn"
             target="_blank"
@@ -15,8 +20,8 @@ export default function LinkTree() {
           >
             GitHub
           </a>
-        </li>
-        <li>
+        <//>
+        <${Li}>
           <a
             href="https://twitter.com/nickrttn"
             target="_blank"
@@ -24,7 +29,7 @@ export default function LinkTree() {
           >
             Twitter
           </a>
-        </li>
+        <//>
       </ul>
     <//>`
   );

@@ -1,4 +1,9 @@
+import { styled } from 'goober';
 import { Section } from './section';
+
+const Li = styled('li')`
+  margin-bottom: 0.5rem;
+`;
 
 export default function LinkTree() {
   return (
@@ -6,7 +11,7 @@ export default function LinkTree() {
       <h2>Links</h2>
       <p>A collection of links to my profiles on other websites.</p>
       <ul>
-        <li>
+        <Li>
           <a
             href="https://github.com/nickrttn"
             target="_blank"
@@ -14,8 +19,8 @@ export default function LinkTree() {
           >
             GitHub
           </a>
-        </li>
-        <li>
+        </Li>
+        <Li>
           <a
             href="https://twitter.com/nickrttn"
             target="_blank"
@@ -23,7 +28,7 @@ export default function LinkTree() {
           >
             Twitter
           </a>
-        </li>
+        </Li>
       </ul>
     </Section>
   );

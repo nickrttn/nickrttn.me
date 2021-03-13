@@ -7,7 +7,10 @@ export default function Home() {
     $$html`
       <main>
         <${Section}>
-          <p>I'm a front-end developer. This is my personal website.</p>
+          <p>
+            I'm a front-end developer. This is my personal website. It isn't
+            much yet, but I'll build it out as I go.
+          </p>
         <//>
       </main>
 
