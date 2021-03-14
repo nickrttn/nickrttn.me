@@ -8,8 +8,8 @@ const Home: FunctionComponent = () => {
     <>
       <Section as="main">
         <p class={styles.leader}>
-          Hi, I'm Nick. I'm a front-end developer. This is my personal website.
-          It doesn't contain a whole lot of content just yet, but I'll build it
+          Hi, I'm Nick. I'm a front-end developer. This is my personal website.{' '}
+          It doesn't contain a whole lot of content just yet, but I'll build it{' '}
           out as I go.
         </p>
         <p>
