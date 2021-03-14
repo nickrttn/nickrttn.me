@@ -18,5 +18,5 @@
   "typeAcquisition": {
     "enable": true
   },
-  "exclude": ["node_modules", "dist", ".cache"]
+  "exclude": ["node_modules", "dist/**/*", ".cache/**/*"]
 }
