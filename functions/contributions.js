@@ -36,40 +36,19 @@ exports.handler = async function (event, context) {
     }
   `);
 
-  let rects = [];
-  let size;
+  const rects = [];
 
   if (data?.user) {
     const weeks = data.user.contributionsCollection.contributionCalendar.weeks;
 
-    const totalRects = weeks.reduce(
-      (acc, el) => acc + el.contributionDays.length,
-      0,
-    );
-
-    let fit = Math.floor(Math.sqrt(totalRects));
-    let col = 1;
-    let row = 1;
-
-    size = 100 / fit;
-
-    for (let week of weeks) {
-      if (row > fit) break;
-
-      for (let day of week.contributionDays) {
-        if (row > fit) break;
-
-        rects.push({ col, row, color: day.color, key: day.date });
-
-        if (col === fit) {
-          col = 1;
-          row++;
-        } else {
-          col++;
-        }
+    for (const week of weeks) {
+      for (const day of week.contributionDays) {
+        rects.push({ color: day.color, key: day.date });
       }
     }
   }
+
+  const size = 100 / rects.length;
 
   // your server-side functionality
   return {

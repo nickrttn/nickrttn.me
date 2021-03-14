@@ -1,0 +1,15 @@
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 1rem;
+  width: 100vw;
+  z-index: -1;
+}
+
+.background svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: hue-rotate(220deg);
+}

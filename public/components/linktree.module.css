@@ -1,0 +1,7 @@
+.links ul {
+  list-style-position: outside;
+}
+
+.links li {
+  margin-bottom: 0.5rem;
+}

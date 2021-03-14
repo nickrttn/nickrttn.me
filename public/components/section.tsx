@@ -1,6 +1,13 @@
-import { styled } from 'goober';
+import type { ComponentType, FunctionComponent } from 'preact';
+import clsx from 'clsx';
+import styles from './section.module.css';
 
-export const Section = styled('section')`
-  padding: 0 2vmax;
-  margin: 2vmax 0;
-`;
+type SectionProps = {
+  as: keyof JSX.IntrinsicElements | ComponentType;
+  className?: string;
+};
+
+export const Section: FunctionComponent<SectionProps> = (props) => {
+  const { as: Cmpnt, className, ...rest } = props;
+  return <Cmpnt class={clsx(className, styles.section)} {...rest} />;
+};

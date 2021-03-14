@@ -1,21 +1,28 @@
-import { styled } from 'goober';
 import { Section } from './section';
-
-const H1Link = styled('a')`
-  text-decoration-thickness: 0.25rem;
-`;
-
-const H1 = styled('h1')`
-  display: inline-block;
-  margin: 0;
-`;
+import styles from './header.module.css';
+import { useLocation, useRoute } from 'preact-iso/router';
+import clsx from 'clsx';
 
 export default function Header() {
+  const route = useRoute();
+  const location = useLocation();
+
+  console.log({ location, route });
+
   return (
-    <Section as="header">
-      <H1Link href="/">
-        <H1>Nick Rutten</H1>
-      </H1Link>
+    <Section className={styles.header} as="header">
+      <h1>Nick Rutten</h1>
+      <nav role="navigation">
+        <a class={clsx({ [styles.active]: location.path === '/' })} href="/">
+          Home
+        </a>
+        <a
+          class={clsx({ [styles.active]: location.path === '/about' })}
+          href="/about"
+        >
+          About
+        </a>
+      </nav>
     </Section>
   );
 }

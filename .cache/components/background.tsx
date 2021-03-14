@@ -1,21 +1,7 @@
 import { createHotContext as $w_h$ } from '/_wmr.js';const $IMPORT_META_HOT$ = $w_h$(import.meta.url);import { html as $$html } from '/@npm/htm/preact';
-import { styled } from '/@npm/goober';
+import styles from './background.module.css.js';
 import { useEffect, useState } from '/@npm/preact/hooks';
 
-const Fixed = styled('div')`
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  z-index: -1;
-
-  svg {
-    width: 100%;
-    height: 100%;
-    background-blend-mode: screen;
-  }
-`;
 
 
 
@@ -24,25 +10,30 @@ const Fixed = styled('div')`
 
 
 
-export default function Background() {
+
+
+
+
+
+const Background = () => {
   const [size, setSize] = useState(0);
   const [rects, setRects] = useState([]);
 
   useEffect(() => {
     async function fetchContributions() {
       const p = await fetch('/.netlify/functions/contributions');
-      const data = await p.json();
+      const data = (await p.json()) ;
       setSize(data.size);
       setRects(data.rects);
     }
 
-    fetchContributions();
+    void fetchContributions();
   }, []);
 
   if (rects.length === 0) return null;
 
   return (
-    $$html`<${Fixed}>
+    $$html`<div class=${styles.background}>
       <svg
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
@@ -55,22 +46,24 @@ export default function Background() {
             value beyond that.
           </title>
         </defs>
-        ${rects.map((el) => (
+        ${rects.map((el, idx) => (
           $$html`<rect
             key=${el.key}
-            x=${(el.col - 1) * size}
-            y=${(el.row - 1) * size}
+            x=${idx * size}
+            y=${0}
             fill=${el.color}
             fill-opacity=${0.25}
             width=${size}
-            height=${size}
+            height=${100}
             shapeRendering="crispEdges"
           />`
         ))}
       </svg>
-    <//>`
+    </div>`
   );
-}
+};
+
+export default Background;
 
 
 import '/@npm/@prefresh/core';

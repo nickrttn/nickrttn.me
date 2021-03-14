@@ -1,20 +1,6 @@
-import { styled } from 'goober';
+import styles from './background.module.css';
 import { useEffect, useState } from 'preact/hooks';
-
-const Fixed = styled('div')`
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  z-index: -1;
-
-  svg {
-    width: 100%;
-    height: 100%;
-    background-blend-mode: screen;
-  }
-`;
+import { FunctionalComponent } from 'preact';
 
 type Rect = {
   color: string;
@@ -23,25 +9,30 @@ type Rect = {
   key: string;
 };
 
-export default function Background() {
+type Data = {
+  size: number;
+  rects: Rect[];
+};
+
+const Background: FunctionalComponent = () => {
   const [size, setSize] = useState<number>(0);
   const [rects, setRects] = useState<Rect[]>([]);
 
   useEffect(() => {
     async function fetchContributions() {
       const p = await fetch('/.netlify/functions/contributions');
-      const data = await p.json();
+      const data = (await p.json()) as Data;
       setSize(data.size);
       setRects(data.rects);
     }
 
-    fetchContributions();
+    void fetchContributions();
   }, []);
 
   if (rects.length === 0) return null;
 
   return (
-    <Fixed>
+    <div class={styles.background}>
       <svg
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
@@ -54,19 +45,21 @@ export default function Background() {
             value beyond that.
           </title>
         </defs>
-        {rects.map((el) => (
+        {rects.map((el, idx) => (
           <rect
             key={el.key}
-            x={(el.col - 1) * size}
-            y={(el.row - 1) * size}
+            x={idx * size}
+            y={0}
             fill={el.color}
             fill-opacity={0.25}
             width={size}
-            height={size}
+            height={100}
             shapeRendering="crispEdges"
           />
         ))}
       </svg>
-    </Fixed>
+    </div>
   );
-}
+};
+
+export default Background;

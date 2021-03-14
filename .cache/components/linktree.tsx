@@ -1,35 +1,52 @@
 import { createHotContext as $w_h$ } from '/_wmr.js';const $IMPORT_META_HOT$ = $w_h$(import.meta.url);import { html as $$html } from '/@npm/htm/preact';
-import { styled } from '/@npm/goober';
 import { Section } from './section.tsx';
-
-const Li = styled('li')`
-  margin-bottom: 0.5rem;
-`;
+import styles from './linktree.module.css.js';
 
 export default function LinkTree() {
   return (
-    $$html`<${Section} as="aside">
+    $$html`<${Section} className=${styles.links} as="aside">
       <h2>Links</h2>
-      <p>A collection of links to my profiles on other websites.</p>
+      <p>
+        A collection of links to some of my profiles on other websites and other
+        things.
+      </p>
       <ul>
-        <${Li}>
+        <li>
           <a
-            href="https://github.com/nickrttn"
-            target="_blank"
+            href="https://www.github.com/nickrttn"
             rel="noopener noreferrer"
+            target="_blank"
           >
-            GitHub
+            GitHub profile
           </a>
-        <//>
-        <${Li}>
+        </li>
+        <li>
           <a
-            href="https://twitter.com/nickrttn"
-            target="_blank"
+            href="https://www.twitter.com/nickrttn"
             rel="noopener noreferrer"
+            target="_blank"
           >
-            Twitter
+            Twitter profile
           </a>
-        <//>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/nickrutten/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            LinkedIn profile
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://trello.com/b/9tkkvRNf/eten"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            My collection of recipes
+          </a>
+        </li>
       </ul>
     <//>`
   );

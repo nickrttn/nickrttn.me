@@ -1,29 +1,23 @@
 import { createHotContext as $w_h$ } from '/_wmr.js';const $IMPORT_META_HOT$ = $w_h$(import.meta.url);import { html as $$html } from '/@npm/htm/preact';
-import Header from './components/header.tsx';
-import Home from './pages/home/index.tsx';
-import NotFound from './pages/_404.tsx';
 import hydrate from '/@npm/preact-iso/hydrate';
 import { ErrorBoundary } from '/@npm/preact-iso/lazy';
 import { LocationProvider, Router } from '/@npm/preact-iso/router';
-import { setup } from '/@npm/goober';
-import { prefix } from '/@npm/goober/prefixer';
-import { h } from '/@npm/preact';
-import GlobalStyles from './style.ts';
 import Background from './components/background.tsx';
-
-// init goober
-setup(h, prefix);
+import Header from './components/header.tsx';
+import Home from './pages/home/index.tsx';
+import About from './pages/about/index.tsx';
+import NotFound from './pages/_404.tsx';
 
 export function App() {
   return (
     $$html`
-      <${GlobalStyles} />
       <${LocationProvider}>
         <div class="app">
           <${ErrorBoundary}>
             <${Header} />
             <${Router}>
               <${Home} path="/" />
+              <${About} path="/about" />
               <${NotFound} default />
             <//>
             <${Background} />
