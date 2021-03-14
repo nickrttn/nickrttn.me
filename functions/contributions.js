@@ -9,7 +9,10 @@ const get = graphql.defaults({
   },
 });
 
-exports.handler = async function () {
+/**
+ * @returns {Promise<{statusCode: number, body: string}>}
+ * */
+exports.handler = async function handler() {
   const data = await get(`
     query {
       user(login: "nickrttn") {
