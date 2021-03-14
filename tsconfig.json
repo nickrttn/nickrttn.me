@@ -9,7 +9,7 @@
     "strict": true,
     "noEmit": true,
     "moduleResolution": "node",
-    "target": "ESNext",
+    "target": "esnext",
     "module": "esnext",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
@@ -18,5 +18,6 @@
   "typeAcquisition": {
     "enable": true
   },
+  "include": ["public/**/*"],
   "exclude": ["node_modules", "dist/**/*", ".cache/**/*"]
 }

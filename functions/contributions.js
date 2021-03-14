@@ -1,4 +1,6 @@
 /* eslint-env node */
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { graphql } = require('@octokit/graphql');
 
 const get = graphql.defaults({
@@ -16,7 +18,7 @@ const get = graphql.defaults({
  * @param {APIGatewayEvent} event
  * @param {Context} context
  */
-exports.handler = async function (event, context) {
+exports.handler = async function () {
   const data = await get(`
     query {
       user(login: "nickrttn") {

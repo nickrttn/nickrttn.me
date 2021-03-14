@@ -1,4 +1,4 @@
-import type { ComponentType, FunctionComponent } from 'preact';
+import type { JSX, ComponentType, FunctionComponent } from 'preact';
 import clsx from 'clsx';
 import styles from './section.module.css';
 

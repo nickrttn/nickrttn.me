@@ -1,13 +1,11 @@
-import { Section } from './section';
-import styles from './header.module.css';
-import { useLocation, useRoute } from 'preact-iso/router';
 import clsx from 'clsx';
+import type { FunctionComponent } from 'preact';
+import { useLocation } from 'preact-iso/router';
+import styles from './header.module.css';
+import { Section } from './section';
 
-export default function Header() {
-  const route = useRoute();
+const Header: FunctionComponent = () => {
   const location = useLocation();
-
-  console.log({ location, route });
 
   return (
     <Section className={styles.header} as="header">
@@ -25,4 +23,6 @@ export default function Header() {
       </nav>
     </Section>
   );
-}
+};
+
+export default Header;

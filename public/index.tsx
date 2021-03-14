@@ -6,8 +6,10 @@ import Header from './components/header';
 import Home from './pages/home';
 import About from './pages/about';
 import NotFound from './pages/_404';
+import { FunctionalComponent } from 'preact';
+import type { PrerenderResult } from 'preact-iso/prerender';
 
-export function App() {
+const App: FunctionalComponent = () => {
   return (
     <>
       <LocationProvider>
@@ -25,11 +27,13 @@ export function App() {
       </LocationProvider>
     </>
   );
-}
+};
 
 hydrate(<App />);
 
-export async function prerender(data: Record<string, unknown>) {
+export async function prerender(
+  data: Record<string, unknown>,
+): Promise<PrerenderResult> {
   const { default: prerender } = await import('preact-iso/prerender');
   return await prerender(<App {...data} />);
 }

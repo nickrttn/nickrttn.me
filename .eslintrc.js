@@ -1,4 +1,8 @@
 /* eslint-env node */
+
+/** @typedef { import("eslint").ESLint.Options } Options */
+
+/** @type {Options} */
 module.exports = {
   env: {
     browser: true,

@@ -1,7 +1,8 @@
 import { Section } from './section';
 import styles from './linktree.module.css';
+import { FunctionComponent } from 'preact';
 
-export default function LinkTree() {
+const LinkTree: FunctionComponent = () => {
   return (
     <Section className={styles.links} as="aside">
       <h2>Links</h2>
@@ -49,4 +50,6 @@ export default function LinkTree() {
       </ul>
     </Section>
   );
-}
+};
+
+export default LinkTree;

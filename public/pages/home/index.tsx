@@ -1,8 +1,9 @@
+import type { FunctionComponent } from 'preact';
 import LinkTree from '../../components/linktree';
 import { Section } from '../../components/section';
 import styles from './index.module.css';
 
-export default function Home() {
+const Home: FunctionComponent = () => {
   return (
     <>
       <Section as="main">
@@ -19,4 +20,6 @@ export default function Home() {
       <LinkTree />
     </>
   );
-}
+};
+
+export default Home;
