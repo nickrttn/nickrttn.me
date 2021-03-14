@@ -1,31 +1,32 @@
 {
-	"scripts": {
-		"start": "wmr",
-		"build": "wmr build --prerender",
-		"serve": "wmr serve",
-		"lint": "eslint \"public/**/*.{js,ts,tsx}\""
-	},
-	"eslintConfig": {
-		"extends": "preact"
-	},
-	"alias": {
-		"react": "preact/compat",
-		"react-dom": "preact/compat"
-	},
-	"dependencies": {
-		"@octokit/graphql": "^4.6.1",
-		"clsx": "^1.1.1",
-		"preact": "^10.5.12",
-		"preact-iso": "^1.0.0",
-		"preact-render-to-string": "^5.1.16"
-	},
-	"devDependencies": {
-		"@typescript-eslint/eslint-plugin": "^4.17.0",
-		"@typescript-eslint/parser": "^4.17.0",
-		"eslint": "^7.22.0",
-		"eslint-config-prettier": "^8.1.0",
-		"eslint-plugin-preact": "^0.1.0",
-		"typescript": "^4.2.3",
-		"wmr": "^1.2.0"
-	}
+  "scripts": {
+    "start": "wmr",
+    "build": "wmr build --prerender",
+    "serve": "wmr serve",
+    "lint": "eslint \"public/**/*.{js,ts,tsx}\""
+  },
+  "eslintConfig": {
+    "extends": "preact"
+  },
+  "alias": {
+    "react": "preact/compat",
+    "react-dom": "preact/compat"
+  },
+  "dependencies": {
+    "@octokit/graphql": "^4.6.1",
+    "clsx": "^1.1.1",
+    "preact": "^10.5.12",
+    "preact-iso": "^1.0.0",
+    "preact-render-to-string": "^5.1.16"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-preact": "^0.1.0",
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.3",
+    "wmr": "^1.2.0"
+  }
 }

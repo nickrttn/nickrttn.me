@@ -1,9 +1,9 @@
 import { createHotContext as $w_h$ } from '/_wmr.js';const $IMPORT_META_HOT$ = $w_h$(import.meta.url);import { html as $$html } from '/@npm/htm/preact';
 const NotFound = () => (
-	$$html`<section>
-		<h1>404: Not Found</h1>
-		<p>It's gone :(</p>
-	</section>`
+  $$html`<section>
+    <h1>404: Not Found</h1>
+    <p>It's gone :(</p>
+  </section>`
 );
 
 export default NotFound;
