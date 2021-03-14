@@ -13,7 +13,7 @@ const Home: FunctionComponent = () => {
           out as I go.
         </p>
         <p>
-          You can read a bit more about me <a href="/about">here</a>.
+          Read a bit more <a href="/about">about me</a> if you like.
         </p>
       </Section>
 
