@@ -3,7 +3,7 @@ import { Section } from '../../components/section';
 
 const About: FunctionalComponent = () => {
   return (
-    <Section as="section">
+    <Section as="main">
       <h2>About me</h2>
       <p>
         I've been writing code, mainly HTML, CSS and JavaScript since 2012 when{' '}
