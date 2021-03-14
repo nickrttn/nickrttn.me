@@ -9,15 +9,6 @@ const get = graphql.defaults({
   },
 });
 
-/**
- * @typedef { import("aws-lambda").APIGatewayEvent} APIGatewayEvent
- * @typedef { import("aws-lambda").Context} Context
- */
-
-/**
- * @param {APIGatewayEvent} event
- * @param {Context} context
- */
 exports.handler = async function () {
   const data = await get(`
     query {
@@ -52,7 +43,6 @@ exports.handler = async function () {
 
   const size = 100 / rects.length;
 
-  // your server-side functionality
   return {
     statusCode: 200,
     body: JSON.stringify({ rects, size }),

@@ -18,6 +18,6 @@
   "typeAcquisition": {
     "enable": true
   },
-  "include": ["public/**/*"],
+  "include": ["public", "functions"],
   "exclude": ["node_modules", "dist/**/*", ".cache/**/*"]
 }

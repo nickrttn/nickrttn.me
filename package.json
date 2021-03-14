@@ -3,7 +3,7 @@
     "start": "wmr",
     "build": "wmr build --prerender",
     "serve": "wmr serve",
-    "lint": "eslint \"public/**/*.{js,ts,tsx}\""
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "eslintConfig": {
     "extends": "preact"
