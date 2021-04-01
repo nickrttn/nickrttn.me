@@ -27,6 +27,6 @@
     "eslint-config-prettier": "^8.1.0",
     "prettier": "^2.2.1",
     "typescript": "^4.2.3",
-    "wmr": "^1.2.0"
+    "wmr": "^1.5.1"
   }
 }
