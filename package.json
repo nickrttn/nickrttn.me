@@ -17,7 +17,7 @@
     "clsx": "^1.1.1",
     "preact": "^10.5.13",
     "preact-iso": "^1.1.1",
-    "preact-render-to-string": "^5.1.18"
+    "preact-render-to-string": "^5.1.19"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.20.0",
